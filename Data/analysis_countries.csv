@@ -1,4 +1,4 @@
-Study,DOI,Country,Subnational,Type
+﻿Study,DOI,Country,Subnational,Type
 Astrom et al 2013,10.1038/nclimate2022,Sweden,Stockholm,Analysis
 Mitchell et al 2016,10.1088/1748-9326/11/7/074006,United Kingdom,London,Analysis
 Mitchell et al 2016,10.1088/1748-9326/11/7/074006,France,Paris,Analysis
@@ -222,3 +222,117 @@ Zhu et al 2023,10.21203/rs.3.rs-2731265/v1,Zimbabwe,,Analysis
 Zhu et al 2023,10.21203/rs.3.rs-2731265/v1,Zambia,,Analysis
 Perkins-Kirkpatrick et al 2022,10.1088/1748-9326/ac44c8,United Kingdom,London,Analysis
 Vicedo-Cabrera 2023,10.1088/1748-9326/ace0d0,Switzerland,,Analysis
+Mester et al 2022,https://nhess.copernicus.org/articles/23/3467/2023/,Mozambique,,Analysis
+Park et al 2023,,Global,,Analysis
+Childs et al 2024,,Bolivia,,Analysis
+Childs et al 2024,,Peru,,Analysis
+Childs et al 2024,,Mexico,,Analysis
+Childs et al 2024,,Colombia,,Analysis
+Childs et al 2024,,Costa Rica,,Analysis
+Childs et al 2024,,Taiwan,,Analysis
+Childs et al 2024,,Brazil,,Analysis
+Childs et al 2024,,Honduras,,Analysis
+Childs et al 2024,,El Salvador,,Analysis
+Childs et al 2024,,Laos,,Analysis
+Childs et al 2024,,Nicaragua,,Analysis
+Childs et al 2024,,Venezuela,,Analysis
+Childs et al 2024,,Vietnam,,Analysis
+Childs et al 2024,,Dominican Republic,,Analysis
+Childs et al 2024,,Indonesia,,Analysis
+Childs et al 2024,,Panama,,Analysis
+Childs et al 2024,,Sri Lanka,,Analysis
+Childs et al 2024,,Philippines,,Analysis
+Childs et al 2024,,Malaysia,,Analysis
+Childs et al 2024,,Thailand,,Analysis
+Childs et al 2024,,Cambodia,,Analysis
+Erazo et al 2024,,Austria,,Analysis
+Erazo et al 2024,,Belgium,,Analysis
+Erazo et al 2024,,Bulgaria,,Analysis
+Erazo et al 2024,,Croatia,,Analysis
+Erazo et al 2024,,Cyprus,,Analysis
+Erazo et al 2024,,Czechia,,Analysis
+Erazo et al 2024,,Denmark,,Analysis
+Erazo et al 2024,,Estonia,,Analysis
+Erazo et al 2024,,Finland,,Analysis
+Erazo et al 2024,,France,,Analysis
+Erazo et al 2024,,Germany,,Analysis
+Erazo et al 2024,,Greece,,Analysis
+Erazo et al 2024,,Hungary,,Analysis
+Erazo et al 2024,,Ireland,,Analysis
+Erazo et al 2024,,Italy,,Analysis
+Erazo et al 2024,,Latvia,,Analysis
+Erazo et al 2024,,Lithuania,,Analysis
+Erazo et al 2024,,Luxembourg,,Analysis
+Erazo et al 2024,,Malta,,Analysis
+Erazo et al 2024,,Netherlands,,Analysis
+Erazo et al 2024,,Poland,,Analysis
+Erazo et al 2024,,Portugal,,Analysis
+Erazo et al 2024,,Romania,,Analysis
+Erazo et al 2024,,Slovakia,,Analysis
+Erazo et al 2024,,Slovenia,,Analysis
+Erazo et al 2024,,Spain,,Analysis
+Erazo et al 2024,,Sweden,,Analysis
+Erazo et al 2024,,Bosnia and Herzegovina,,Analysis
+Erazo et al 2024,,Albania,,Analysis
+Erazo et al 2024,,Kosovo,,Analysis
+Erazo et al 2024,,Montenegro,,Analysis
+Erazo et al 2024,,North Macedonia,,Analysis
+Hajat et al 2024,,United Kingdom,,Analysis
+Zhou et al 2024,,China,,Analysis
+Dimitrova et al 2024,,Senegal,,Analysis
+Dimitrova et al 2024,,Haiti,,Analysis
+Dimitrova et al 2024,,Guinea,,Analysis
+Dimitrova et al 2024,,Sierra Leone,,Analysis
+Dimitrova et al 2024,,Liberia,,Analysis
+Dimitrova et al 2024,,Benin,,Analysis
+Dimitrova et al 2024,,Nigeria,,Analysis
+Dimitrova et al 2024,,Cameroon,,Analysis
+Dimitrova et al 2024,,Angola,,Analysis
+Dimitrova et al 2024,,Zambia,,Analysis
+Dimitrova et al 2024,,Malawi,,Analysis
+Dimitrova et al 2024,,Zimbabwe,,Analysis
+Dimitrova et al 2024,,South Africa,,Analysis
+Dimitrova et al 2024,,Tanzania,,Analysis
+Dimitrova et al 2024,,Uganda,,Analysis
+Dimitrova et al 2024,,Rwanda,,Analysis
+Dimitrova et al 2024,,Burundi,,Analysis
+Dimitrova et al 2024,,Ethiopia,,Analysis
+Dimitrova et al 2024,,Albania,,Analysis
+Dimitrova et al 2024,,Jordan,,Analysis
+Dimitrova et al 2024,,Armenia,,Analysis
+Dimitrova et al 2024,,Pakistan,,Analysis
+Dimitrova et al 2024,,India,,Analysis
+Dimitrova et al 2024,,Bangladesh,,Analysis
+Dimitrova et al 2024,,Nepal,,Analysis
+Dimitrova et al 2024,,Tajikistan,,Analysis
+Dimitrova et al 2024,,Philippines,,Analysis
+Dimitrova et al 2024,,East Timor,,Analysis
+Beck et al 2024,,Austria,,Analysis
+Beck et al 2024,,Belgium,,Analysis
+Beck et al 2024,,Bulgaria,,Analysis
+Beck et al 2024,,Croatia,,Analysis
+Beck et al 2024,,Cyprus,,Analysis
+Beck et al 2024,,Czechia,,Analysis
+Beck et al 2024,,Denmark,,Analysis
+Beck et al 2024,,Estonia,,Analysis
+Beck et al 2024,,Finland,,Analysis
+Beck et al 2024,,France,,Analysis
+Beck et al 2024,,Germany,,Analysis
+Beck et al 2024,,Greece,,Analysis
+Beck et al 2024,,Hungary,,Analysis
+Beck et al 2024,,Ireland,,Analysis
+Beck et al 2024,,Italy,,Analysis
+Beck et al 2024,,Latvia,,Analysis
+Beck et al 2024,,Lithuania,,Analysis
+Beck et al 2024,,Luxembourg,,Analysis
+Beck et al 2024,,Malta,,Analysis
+Beck et al 2024,,Netherlands,,Analysis
+Beck et al 2024,,Poland,,Analysis
+Beck et al 2024,,Portugal,,Analysis
+Beck et al 2024,,Romania,,Analysis
+Beck et al 2024,,Slovakia,,Analysis
+Beck et al 2024,,Slovenia,,Analysis
+Beck et al 2024,,Spain,,Analysis
+Beck et al 2024,,Sweden,,Analysis
+Beck et al 2024,,Albania,,Analysis
+Beck et al 2024,,Montenegro,,Analysis

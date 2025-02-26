@@ -1,4 +1,4 @@
-Study,Author countries,Lead author country,Senior author country,NCC
+﻿Study,Author countries,Lead author country,Senior author country,NCC
 Astrom et al 2013,"Sweden, United States",Sweden,Sweden,FALSE
 Mitchell et al 2016,"United Kingdom, United States",United Kingdom,United Kingdom,TRUE
 Frame et al 2020,"New Zealand, United States",New Zealand,New Zealand,TRUE
@@ -12,4 +12,11 @@ Stuart-Smith et al 2023,"New Zealand, Switzerland, United Kingdom, United States
 Zhu et al 2023,"Australia, China, United States",China,China,TRUE
 Perkins-Kirkpatrick et al 2022,"Australia, New Zealand, United Kingdom, United States",Australia,United States,TRUE
 Vicedo-Cabrera 2023,Switzerland,Switzerland,Switzerland,TRUE
-Park et al 2023,"Japan, United Kingdom, United States, Canada, Germany, China, Colombia, Republic of Korea",Japan,Japan,FALSE
+Park et al 2023,"Japan, United Kingdom, United States, Canada, Germany, China, Colombia, Republic of Korea",Japan,Japan,TRUE
+Mester et al 2022,Germany,Germany,Germany,TRUE
+Childs et al 2024,United States,United States,United States,TRUE
+Erazo et al 2024,"Belgium, Italy, United Kingdom, United States, Germany",Belgium,Belgium,TRUE
+Hajat et al 2024,"United Kingdom, Germany",United Kingdom,United Kingdom,TRUE
+Zhou et al 2024,"China, Germany",China,China,TRUE
+Dimitrova et al 2024,"Germany, United States, United Kingdom",Germany,Germany,TRUE
+Beck et al 2024,"Spain, Switzerland, France",Spain,France,TRUE

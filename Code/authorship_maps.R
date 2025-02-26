@@ -4,20 +4,21 @@
 # country lists and some visualisation
 
 library(magrittr); library(dplyr); library(sf); library(countrycode); library(ggplot2)
-setwd("C:/Users/roryj/Dropbox/Research/attriverse/figure_generation/")
+setwd("C:/Users/roryj/Dropbox/Research/attriverse/figure_generation/2025_02_NCC_updated/")
 
 # proj
 robinson = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 
-# geographical focus of analysis country list (n=101)
+# geographical focus of analysis country list 
 c1 = read.csv("./analysis_countries.csv") %>%
-  dplyr::filter(!Study %in% c("Astrom et al 2013")) %>%
+  dplyr::filter(!Study %in% c("Astrom et al 2013", "Park et al 2023")) %>%
   dplyr::mutate(
   ISO = countrycode::countrycode(Country, origin="country.name", destination="iso3c")
   ) %>%
   dplyr::group_by(ISO) %>%
   dplyr::summarise(Country = head(Country, 1),
                    n_analysis = n_distinct(Study))
+c1$ISO[ c1$Country == "Kosovo" ] = "XK"
 
 # analysis author list
 c2 = read.csv("./author_countries.csv") %>%
@@ -64,7 +65,8 @@ ne = sf::st_read("./ne_10m_admin_0_countries.shp") %>%
   dplyr::mutate(
     ISO = ISO_A3,
     ISO = replace(ISO, ADMIN=="France", "FRA"),
-    ISO = replace(ISO, ADMIN=="Norway", "NOR")
+    ISO = replace(ISO, ADMIN=="Norway", "NOR"),
+    ISO = replace(ISO, ADMIN=="Kosovo", "XK")
   ) %>%
   left_join(dplyr::select(c1, -Country)) %>%
   #dplyr::mutate(n_analysis = replace(n_analysis, is.na(n_analysis), 0)) %>%
@@ -72,6 +74,15 @@ ne = sf::st_read("./ne_10m_admin_0_countries.shp") %>%
   #dplyr::mutate(n_authors = replace(n_authors, is.na(n_authors), 0)) %>%
   left_join(dplyr::select(c3, -Country)) %>%
   sf::st_transform(robinson)
+
+# add 1 to all n_analysis for global to represent Park 2023
+ne = ne %>%
+  dplyr::mutate(n_analysis = replace(n_analysis, is.na(n_analysis), 0)) %>%
+  dplyr::mutate(n_analysis = n_analysis + 1) 
+
+# remove antarctica
+ne = ne %>%
+  dplyr::filter(ADMIN != "Antarctica")
 
 # continents
 ne2 = sf::st_read("./ne_10m_land.shp") %>%
@@ -92,8 +103,8 @@ p1 = ggplot() +
   geom_sf(data=ne2, fill=NA, color="grey50", size=0.2) +
   theme_void() + 
   #scale_fill_gradientn(colors=rev(MetBrewer::met.brewer("Greek", 5)), name="Number\nof\nstudies", na.value="grey90") + 
-  scale_fill_gradientn(colors=pals::brewer.pubugn(200)[75:200], name="Number\nof\nstudies", na.value="grey95") + 
-  ggtitle("Geographic focus of health impact attribution studies") +
+  scale_fill_gradientn(colors=pals::brewer.pubugn(200)[70:200], name="Number\nof\nstudies", na.value="grey95") + 
+  ggtitle("Geographic focus of research") +
   theme(plot.title = element_text(size=14, hjust=0.5))
 
 p2 = ggplot() + 
@@ -101,8 +112,9 @@ p2 = ggplot() +
   geom_sf(data=ne2, fill=NA, color="grey50", size=0.2) +
   theme_void() + 
   #scale_fill_gradientn(colors=rev(MetBrewer::met.brewer("Greek", 5)), name="Number\nof\nstudies", na.value="grey90") + 
-  scale_fill_gradientn(colors=pals::brewer.pubugn(200)[75:200], name="Number\nof\nstudies", na.value="grey95") + 
-  ggtitle("Authorship of health impact attribution studies")  +
+  scale_fill_gradientn(colors=pals::brewer.pubugn(200)[70:200], name="Number\nof\nstudies", na.value="grey95",
+                       limits=c(1, 13), breaks=c(2, 4, 6, 8, 10, 12)) + 
+  ggtitle("Authorship")  +
   theme(plot.title = element_text(size=14, hjust=0.5))
 
 p3 = ggplot() + 
@@ -110,12 +122,12 @@ p3 = ggplot() +
   geom_sf(data=ne2, fill=NA, color="grey50", size=0.2) +
   theme_void() + 
   #scale_fill_gradientn(colors=rev(MetBrewer::met.brewer("Greek", 5)), name="Number\nof\nstudies", na.value="grey90") + 
-  scale_fill_gradientn(colors=pals::brewer.pubugn(200)[75:200], name="Number\nof\nstudies", na.value="grey95") + 
+  scale_fill_gradientn(colors=pals::brewer.pubugn(200)[70:200], name="Number\nof\nstudies", na.value="grey95") + 
   ggtitle("Lead or senior authorship only")  +
   theme(plot.title = element_text(size=14, hjust=0.5))
 
 pc = gridExtra::grid.arrange(p1, p2, p3, ncol=1)
-ggsave(pc, file="./attriverse_geomap_july2024.jpg", device="jpg", dpi=600, width=8, height=10.5, units="in")
+ggsave(pc, file="./Attriverse_NCC_Jan2025_SuppFig2.jpg", device="jpg", dpi=600, width=7, height=9.5, units="in")
 
 
 # 
