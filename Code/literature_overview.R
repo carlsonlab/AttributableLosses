@@ -6,8 +6,6 @@ library(scatterpie)
 library(MetBrewer)
 library(patchwork)
 
-setwd("C:/Users/cjc277/OneDrive - Yale University/Desktop/WHO_ADM0")
-
 geometry_to_lonlat <- function(x) {
   if (any(sf::st_geometry_type(x) != "POINT")) {
     stop("Selecting non-points isn't implemented.")
@@ -24,7 +22,7 @@ geometry_to_lonlat <- function(x) {
 
 ### Basic study counting
 
-att <- read_csv("Studies.csv")
+att <- read_csv("study_metadata.csv")
 att <- att[c(1:20),] # Remove 2025 study
 att %>% 
   select(Region, `Health impact`) %>% 
@@ -104,14 +102,13 @@ who %>%
                          "Migration and displacement"), size = 0.2) +
   scale_fill_manual(values = colors[c(10,9,8,11,12,14,1,3,5,6)]) + 
   guides(fill=guide_legend(title="Health impact")) + 
-  theme(legend.position='none', 
-        panel.background=element_blank(),
+  theme(panel.background=element_blank(),
         panel.spacing = unit(c(0, 0, 0, 0), "cm"),
         plot.margin = margin(-2,0,-2,0,'cm')) -> g1; g1
 
 ### Bottom panels
 
-att <- read_csv("Studies.csv")
+att <- read_csv("study_metadata.csv")
 att <- att[c(1:20),] # Remove 2025 study
 
 att %>%
@@ -172,4 +169,4 @@ g1 / g6 +
   plot_layout(height = c(1,0.4), width = c(1,0.8), guides = 'collect') + 
   plot_annotation(tag_levels = 'a') + 
   coord_sf()
-ggsave('test.pdf')
+ggsave('Figure 1.pdf', width = 11.74, height = 7.94, units = "in")

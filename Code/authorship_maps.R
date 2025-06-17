@@ -4,12 +4,13 @@
 # country lists and some visualisation
 
 library(magrittr); library(dplyr); library(sf); library(countrycode); library(ggplot2)
+setwd("C:/Users/roryj/Dropbox/Research/attriverse/figure_generation/2025_02_NCC_updated/")
 
 # proj
 robinson = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 
 # geographical focus of analysis country list 
-c1 = read.csv("./Data/analysis_countries.csv") %>%
+c1 = read.csv("./analysis_countries.csv") %>%
   dplyr::filter(!Study %in% c("Astrom et al 2013", "Park et al 2023")) %>%
   dplyr::mutate(
   ISO = countrycode::countrycode(Country, origin="country.name", destination="iso3c")
@@ -34,7 +35,7 @@ c2 = read.csv("./author_countries.csv") %>%
                    n_authors = n_distinct(Study))
 
 # senior or lead
-c3 = read.csv("./Data/author_countries.csv") %>%
+c3 = read.csv("./author_countries.csv") %>%
   dplyr::filter(NCC == TRUE) %>%
   dplyr::rename("author_country"=2,
                 "lead"=3,
@@ -42,7 +43,7 @@ c3 = read.csv("./Data/author_countries.csv") %>%
   dplyr::select(1, 3) %>%
   tidyr::separate_rows(lead, sep=", ")
 
-c4 = read.csv("./Data/author_countries.csv") %>%
+c4 = read.csv("./author_countries.csv") %>%
   dplyr::filter(NCC == TRUE) %>%
   dplyr::rename("author_country"=2,
                 "lead"=3,
@@ -84,7 +85,7 @@ ne = ne %>%
   dplyr::filter(ADMIN != "Antarctica")
 
 # continents
-ne2 = sf::st_read("./Data/ne_10m_land.shp") %>%
+ne2 = sf::st_read("./ne_10m_land.shp") %>%
   sf::st_transform(robinson)
 
 # combine and plot 1
